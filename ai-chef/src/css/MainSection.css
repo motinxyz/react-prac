@@ -1,0 +1,68 @@
+@import url("variables.css");
+
+.add-ingredient-form {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+main {
+  padding: 30px 40px;
+  width: 500px;
+  margin: 0 auto;
+}
+.main-container .list-items {
+  display: flex;
+  flex-direction: column;
+  margin-left: 40%;
+  margin-top: 3vh;
+}
+.add-ingredient-form > input {
+  border: 1px solid rgb(160, 155, 155);
+  border-radius: 5px;
+  padding: 9px 13px;
+  box-shadow: 0 1px 2px 1px rgba(0, 0, 0, 0.05);
+  flex-grow: 1;
+  min-width: 150px;
+  max-width: 400px;
+  height: 38px;
+}
+.add-ingredient-form > button {
+  font-family: "Ancizar Sans";
+  font-weight: 500;
+  border-radius: 6px;
+  border: none;
+  background-color: black;
+  color: white;
+  padding: 0 8px;
+  width: 150px;
+}
+
+.add-ingredient-form > button::before {
+  content: "+";
+  margin-right: 5px;
+}
+
+#list-title {
+  margin-top: 20px;
+}
+
+.get-recipe {
+  display: flex;
+  background-color: var(--main-bg-clr);
+  padding: 15px;
+  border-radius: 10px;
+  align-items: center;
+  gap: 10px;
+  border: 2px solid grey;
+  margin-block: 40px;
+}
+.text-section {
+  color: black;
+}
+.get-recipe-button {
+  padding: 11px;
+  border-radius: 10px;
+  background-color: rgb(231, 170, 100);
+  font-weight: 600;
+}

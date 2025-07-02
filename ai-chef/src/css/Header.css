@@ -1,0 +1,22 @@
+@import url("variables.css");
+
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+
+header {
+  display: flex;
+  background-color: var(--main-bg-clr);
+  color: black;
+  height: 70px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgb(173, 171, 171);
+}
+.chef-icon {
+  margin-right: 10px;
+  font-size: 3rem;
+}
+header .title {
+  font-weight: 400;
+}

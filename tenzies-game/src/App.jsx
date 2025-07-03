@@ -1,5 +1,7 @@
+import MainSection from "./components/MainSection";
+
 export default function App(){
     return(
-        <h1>APP</h1>
+        <MainSection/>
     )
 }

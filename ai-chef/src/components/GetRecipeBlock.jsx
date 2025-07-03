@@ -1,7 +1,7 @@
 export default function GetRecipeBlock(props) {
   return (
     <>
-      <div className="get-recipe">
+      <div className="get-recipe" ref={props.ref}>
         <div className="text-section">
           <h1>Ready for a recipe?</h1>
           <h4>Get a recipe for the ingredients you have in hand</h4>

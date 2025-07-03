@@ -19,7 +19,7 @@ export default function Main() {
   }, []);
 
   function handleMemeImageChange() {
-    const randMemeSerial = Math.floor(Math.random() * 100) + 1;
+    const randMemeSerial = Math.floor(Math.random() * memeLib.length) + 1;
     setMeme((prevMeme) => ({
       ...prevMeme,
       memeUrl: memeLib[randMemeSerial].url,

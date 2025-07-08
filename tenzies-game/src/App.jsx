@@ -1,8 +1,10 @@
-import MainSection from "./components/MainSection";
+import GameSection from "./components/GameSection";
 import "./styles/App.css";
 
-export default function App(){
-    return(
-        <MainSection/>
-    )
+export default function App() {
+  return (
+    <>
+      <GameSection />
+    </>
+  );
 }

@@ -1,23 +1,11 @@
-main {
-    height: 93vh;
-    background-color: white;
-    width: 93vw;
-    border-radius: 1.5rem;
-    max-width: 400px;
-    max-height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    padding: 30px;
-}
-
-main>div.headings {
+.game>div.headings {
     display: flex;
     flex-direction: column;
     align-items: center;
 
 }
-main>div.headings p{
+
+.game>div.headings p {
     max-width: 80%;
     text-align: center;
 }
@@ -42,6 +30,7 @@ button#btn-roll-dice {
     color: white;
     border-radius: 0.6rem;
     font-weight: 700;
+    border: 1px solid white;
 
 }
 
@@ -55,22 +44,4 @@ button#btn-roll-dice:hover {
 button#btn-roll-dice:active {
     background-color: var(--btn-color-light-blue);
     color: white;
-}
-
-@media(min-width:100px) {
-    main {
-        animation: popIn 0.6s;
-    }
-
-    @keyframes popIn {
-        0% {
-            opacity: 0;
-            transform: scale(0.95) translateY(20px);
-        }
-
-        100% {
-            opacity: 1;
-            transform: scale(1) translateY(0);
-        }
-    }
 }

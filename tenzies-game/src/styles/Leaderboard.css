@@ -1,0 +1,17 @@
+.leaderboard #dice-rolled {
+    font-weight: normal;
+    font-size: large;
+    font-style: normal;
+}
+
+.leaderboard .streaks .indv-streak {
+    font-weight: normal;
+    text-align: center;
+}
+
+.highlight-last-in {
+  font-weight: bold;
+  color: var(--main-color);
+  font-size: x-large;
+  text-shadow: 4px 4px 2px #59E391;
+}

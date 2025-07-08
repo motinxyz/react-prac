@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: rgb(6, 6, 52);
+    background-color: var(--main-color);
     display: flex;
     justify-content: center;
     align-items: center;

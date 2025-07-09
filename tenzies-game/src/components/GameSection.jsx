@@ -4,12 +4,14 @@ import Die from "./Die";
 import { nanoid } from "nanoid";
 import Confetti from "react-confetti";
 import Leaderboard from "./Leaderboard";
+import useWindowSize from "../hooks/useWindowSize";
 
 export default function MainSection() {
   const [diceArr, setDiceArr] = useState(() => generateAllNewDice());
   const buttonRef = useRef(null);
   const [currentDiceRolled, setCurrentDiceRolled] = useState(0);
   const [prevStreaks, setPrevStreaks] = useState([]);
+  const { width, height } = useWindowSize();
 
   function generateAllNewDice() {
     return new Array(10).fill().map(() => ({
@@ -95,7 +97,7 @@ export default function MainSection() {
   return (
     <>
       <section className="game">
-        {gameWon ? <Confetti /> : null}
+        {gameWon ? <Confetti width={width} height={height} /> : null}
         <div aria-live="polite">
           {gameWon && (
             <p className="sr-only">Congratulations you won the game!</p>
@@ -123,6 +125,7 @@ export default function MainSection() {
       <Leaderboard
         currentDiceRolled={currentDiceRolled}
         prevStreaks={prevStreaks}
+        gameWon={gameWon}
       />
     </>
   );

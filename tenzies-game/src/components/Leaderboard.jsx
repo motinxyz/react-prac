@@ -1,7 +1,6 @@
 import "../styles/Leaderboard.css";
 
 export default function Leaderboard(props) {
-
   const prevStreaksItems = props.prevStreaks.map((streak, index) => {
     if (streak.lastIn) {
       return (
@@ -19,7 +18,14 @@ export default function Leaderboard(props) {
   return (
     <section className="leaderboard">
       <h3 id="dice-rolled">
-        Current Dice Rolled: {props.currentDiceRolled} times
+        Current Dice Rolled:{" "}
+        <p
+          id="current-dice-rolled-times"
+          className={props.gameWon ? "" : "dice-shadow"}
+        >
+          {props.currentDiceRolled}
+        </p>{" "}
+        times
       </h3>
       {prevStreaksItems.length > 0 && (
         <div className="streaks">

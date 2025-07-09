@@ -10,8 +10,17 @@
 }
 
 .highlight-last-in {
-  font-weight: bold;
-  color: var(--main-color);
-  font-size: x-large;
-  text-shadow: 4px 4px 2px #59E391;
+    font-weight: bold;
+    color: var(--main-color);
+    font-size: x-large;
+    text-shadow: 3px 3px 2px #3e9561;
+}
+
+#current-dice-rolled-times {
+    display: inline;
+
+}
+
+.dice-shadow {
+    text-shadow: 3px 3px 2px #3e9561;
 }

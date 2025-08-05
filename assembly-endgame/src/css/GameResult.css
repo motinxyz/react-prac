@@ -1,0 +1,44 @@
+section.game-result {
+    text-align: center;
+    min-height: 70px;
+    padding: 7px;
+    border-radius: 4px;
+    margin-block: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #f9f4da;
+
+}
+
+section.game-result.languageLost {
+    background-color: #755ea7;
+    /* color: black; */
+    border: 1px dashed #323232;
+    font-style: italic;
+    font-weight: 400;
+}
+
+section.game-result.won {
+    background-color: #10a95b;
+    /* color: #f9f4da; */
+
+}
+
+section.game-result.lost {
+    background-color: #d02629;
+    /* color: #f9f4da; */
+
+}
+
+
+
+section.game-result>h2 {
+    /* margin: 5px; */
+    font-size: 1.25rem;
+}
+
+section.game-result>p {
+    /* margin: 5px; */
+}

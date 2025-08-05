@@ -1,0 +1,114 @@
+section.language-list {
+    width: 100%;
+    display: flex;
+    max-width: 450px;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 36px;
+
+}
+
+.language-list>span.chip {
+    border-radius: 5px;
+    padding: 4px;
+    position: relative;
+
+}
+
+span.chip.lost::before {
+    content: "💀";
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    font-size: 0.85rem;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+section.word {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+
+section.word span {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    font-size: 1.125rem;
+    background-color: #323232;
+    text-align: center;
+    border-bottom: 1px solid #f9f4da;
+
+}
+
+section.word span.undiscovered-letter {
+    border-color: red;
+    color: red;
+}
+
+
+section.keys {
+    /* width: 500px; */
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    max-width: 450px;
+}
+
+section.keys>button {
+    width: 35px;
+    height: 35px;
+    background-color: #fcba29;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+section.keys>button:disabled {
+    cursor: not-allowed;
+    opacity: 0.8;
+}
+
+section.keys>button.correct {
+    background-color: #10a95b;
+}
+
+section.keys>button.wrong {
+    background-color: #ec5d49;
+}
+
+section.new-game-button {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    margin-top: 46px;
+}
+
+section.new-game-button>button {
+    padding: 10px 55px;
+    background-color: rgb(123, 163, 232);
+    border: 1px solid #d9d9d9;
+    font-size: large;
+    cursor: pointer;
+    border-radius: 8px;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}

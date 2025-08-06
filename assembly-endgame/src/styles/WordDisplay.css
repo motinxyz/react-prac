@@ -1,0 +1,23 @@
+
+section.word {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+}
+
+section.word span {
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    font-size: 1.125rem;
+    background-color: #323232;
+    text-align: center;
+    border-bottom: 1px solid #f9f4da;
+
+}
+
+section.word span.undiscovered-letter {
+    border-color: red;
+    color: red;
+}
+

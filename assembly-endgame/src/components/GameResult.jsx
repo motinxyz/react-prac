@@ -1,4 +1,4 @@
-import "../css/GameResult.css";
+import "../styles/GameResult.css";
 import clsx from "clsx";
 import { getFarewellText } from "../utils/utils";
 
@@ -11,7 +11,6 @@ export default function GameResult(props) {
     lost: props.isGameLost,
   });
 
-  getFarewellText();
   return (
     <section aria-live="polite" role="status" className={gameStatusClass}>
       {isGameOver ? (

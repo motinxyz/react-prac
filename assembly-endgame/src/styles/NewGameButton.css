@@ -1,0 +1,15 @@
+section.new-game-button {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    margin-top: 46px;
+}
+
+section.new-game-button>button {
+    padding: 10px 55px;
+    background-color: rgb(123, 163, 232);
+    border: 1px solid #d9d9d9;
+    font-size: large;
+    cursor: pointer;
+    border-radius: 8px;
+}

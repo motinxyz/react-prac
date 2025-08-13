@@ -10,8 +10,17 @@
   align-items: center;
   justify-content: flex-end;
   padding: 0 20px;
-  overflow: hidden;
+  overflow-x: auto;
+  /* overflow-y: hidden; */
+  white-space: nowrap;
+  scrollbar-width: none;
 }
+
+.inputDisplay::-webkit-scrollbar {
+  display: none;
+  /* hide scrollbar in Chrome/Edge */
+}
+
 
 .inputDisplay:active {
   border: inherit;
@@ -22,9 +31,22 @@
   font-weight: 700;
   font-size: x-large;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  /* overflow: hidden; */
+  /* text-overflow: ellipsis; */
   transition: opacity 0.4s ease;
+  display: inline-block;
+  white-space: nowrap;
+  animation: scrollText 8s linear infinite;
+}
+
+@keyframes scrollText {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 @keyframes fadeOutUp {

@@ -1,0 +1,8 @@
+.buttonSection {
+  margin: 0 1rem;
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  height: calc(100% - (100px + 20%));
+  gap: 2%;
+  justify-content: center;
+}

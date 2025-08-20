@@ -7,6 +7,16 @@ export function useCalculator() {
   const [isInputValid, setIsInputValid] = useState(true);
   const [isTransitioning, setIsTransitioning] = useState(false);
 
+  // equalPressed is to track if it has
+  // just got calculated using =, if it has,
+  // then it should act differently
+  // like if a digit is pressed
+  // don't concat the digit to the result.
+  // it should rather erase the previous result
+  // and start fresh, but if an +-*/ pressed
+  // it should retain the prevous value
+  const [equalPressed, setEqualPressed] = useState(false);
+
   function shakeInputField() {
     setIsInputValid(false);
     setTimeout(() => setIsInputValid(true), 300);
@@ -23,7 +33,42 @@ export function useCalculator() {
     // clean the eqn var
     if (pressedKey === "c") {
       setEqn(["0"]);
+      setEqualPressed(false);
+      return;
     }
+
+    // if the one value on display is the
+    // result from the last calculation
+    // handle it first,
+    // so that new digit presses don;t get concated
+    // to the result
+    else if (equalPressed === true) {
+      // if an operator button is pressed
+      // retain the last value
+      if (isPressedKeyAnOperator) {
+        setEqn((prevEqn) => [...prevEqn, pressedKey]);
+        setEqualPressed(false);
+      } else if (pressedKey === "=") {
+        console.info("Nothing to calculate");
+      }
+      // if a . is pressed, replace all values with 0.
+      else if (pressedKey === ".") {
+        setEqn(["0."]);
+        setEqualPressed(false);
+      }
+      // if it,s +/-, invert the result and retain it
+      else if (pressedKey === "+/-" || pressedKey === "|x|") {
+        setEqn((prevEqn) => [opsOnSingleOperand(prevEqn[0], pressedKey)]);
+        setEqualPressed(false);
+      } else if (pressedKey === "<") {
+        setEqn(["0"]);
+        setEqualPressed(false);
+      } else if (isPressedKeyADigit) {
+        setEqn([pressedKey]);
+        setEqualPressed(false);
+      }
+    }
+
     // if back button pressed, remove last character from eqn
     else if (pressedKey === "<") {
       setEqn((prevEqn) => {
@@ -205,6 +250,7 @@ export function useCalculator() {
           }, 400);
         } else if (pressedKey === "=") {
           setIsTransitioning(true);
+          setEqualPressed(true);
           setTimeout(() => {
             setEqn([calculate(eqn)]);
             setIsTransitioning(false);
@@ -250,6 +296,7 @@ export function useCalculator() {
       else if (pressedKey === "=") {
         // during parsing
         setIsTransitioning(true);
+        setEqualPressed(true);
         setTimeout(() => {
           setEqn([calculate(eqn)]);
           setIsTransitioning(false);
